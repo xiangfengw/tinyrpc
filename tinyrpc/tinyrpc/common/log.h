@@ -28,8 +28,8 @@ std::string formatString(const char* str, Args&&... args) {
     if (tinyrpc::Logger::GetGlobalLogger()->getLogLevel() && tinyrpc::Logger::GetGlobalLogger()->getLogLevel() <= tinyrpc::Debug) \
     { \
         tinyrpc::Logger::GetGlobalLogger()->pushLog(tinyrpc::LogEvent(tinyrpc::LogLevel::Debug).toString() \
-        + "[" + std::string(__FILE__) + ":" + std::to_string(__LINE__) + "]\t" + tinyrpc::formatString(str, ##__VA_ARGS__) + "\n");\
-        tinyrpc::Logger::GetGlobalLogger()->log();
+        + "[" + std::string(__FILE__) + ":" + std::to_string(__LINE__) + "]\t" + tinyrpc::formatString(str, ##__VA_ARGS__) + "\n"); \
+        tinyrpc::Logger::GetGlobalLogger()->log(); \
     } \
 
 #define INFOLOG(str, ...)\
@@ -95,7 +95,7 @@ public:
 
     std::string toString();
 
- private:
+private:
     std::string m_file_name;
     int32_t m_file_line;
     int32_t m_pid;

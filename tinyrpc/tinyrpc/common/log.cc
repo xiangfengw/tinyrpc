@@ -5,6 +5,7 @@
 #include "tinyrpc/common/log.h"
 #include "tinyrpc/common/util.h"
 #include "tinyrpc/common/config.h"
+#include "tinyrpc/common/mutex.h"
 
 namespace tinyrpc {
 
